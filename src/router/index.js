@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { HomeScreen, OrderScreen, AccountScreen, SplashScreen } from '../screens';
+import { HomeScreen, OrderScreen, AccountScreen, SplashScreen, TipsScreen, RewardsScreen } from '../screens';
 import { BottomNavigator } from '../components';
 
 const Stack = createStackNavigator();
@@ -16,6 +16,8 @@ const MainApp  = () => {
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Orders" component={OrderScreen} />
+      <Tab.Screen name="Tips" component={TipsScreen} />
+      <Tab.Screen name="Rewards" component={RewardsScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>
   );

@@ -20,7 +20,7 @@ export default HeaderLogo;
 
 const styles = StyleSheet.create({
 	backgroundTopOuter: {
-    height: "30%",
+    height: 250,
     backgroundColor: 'white',
   },
   backgroundTopInner: {
@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
   logoWrapper: {
     flex: 1,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginBottom: 50
   },
   logo: {
     width: 120,

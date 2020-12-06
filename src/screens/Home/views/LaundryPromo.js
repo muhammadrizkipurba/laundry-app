@@ -1,6 +1,7 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
-import {FlatListSlider} from 'react-native-flatlist-slider';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { FlatListSlider } from 'react-native-flatlist-slider';
+import { Color } from '../../../assets';
 import CustomSliderPreview from './CustomSliderPreview';
 
 const images = [
@@ -25,9 +26,16 @@ const images = [
 const LaundryPromo = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>
-        Special Offers
-      </Text>
+      <View style={styles.titleWrapper}>
+        <Text style={styles.title}>
+          Special Offers
+        </Text>
+        <TouchableOpacity>
+          <Text style={styles.seeMoreButton}>
+            See all promos
+          </Text>
+        </TouchableOpacity>
+      </View>
       <FlatListSlider
         data={images}
         width={275}
@@ -52,5 +60,14 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "600",
     // textAlign: "center"
-	},
+  },
+  titleWrapper: {
+    flexDirection: "row",
+    alignItems: 'center',
+    justifyContent: "space-between"
+  },
+  seeMoreButton: {
+    fontSize: 13,
+    color: Color.mainBlue
+  }
 });

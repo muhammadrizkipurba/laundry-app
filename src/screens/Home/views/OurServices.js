@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
 		marginBottom: 20
 	},
 	ourServicesTitle: {
-    fontSize: 20,
-    fontWeight: "600"
+		fontSize: 20,
+		fontWeight: "600"
 	},
 	servicesWrapper: {
 		flexDirection: "row",

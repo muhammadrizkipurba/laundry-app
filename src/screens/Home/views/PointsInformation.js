@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     paddingLeft: 23,
     paddingRight: 10,
     justifyContent: "center",
-    top: '25%', 
+    top: 210, 
     height: 70, 
     width: WindowWidth*0.9,
     backgroundColor: 'white',
