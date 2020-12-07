@@ -8,10 +8,9 @@ import LaundryTips from './views/LaundryTips';
 import OurServices from './views/OurServices';
 import PointsInformation from './views/PointsInformation';
 
-const HomeScreen = () => {
-  
-  const [positionY, setpositionY] = useState(0)
+const HomeScreen = ({ navigation }) => {
 
+  const [positionY, setpositionY] = useState(0)
 
   const handleScroll = e => {
     const position = e.nativeEvent.contentOffset.y;
@@ -31,7 +30,7 @@ const HomeScreen = () => {
             <View style={styles.backgroundBottomInner}>
               <LaundryPromo />
               <OurServices />
-              <LaundryTips />
+              <LaundryTips navigation={navigation} />
             </View>
           </View>
           <PointsInformation />

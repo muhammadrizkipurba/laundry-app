@@ -184,22 +184,22 @@ const Tips = [
 			},
 			{
 				title: "1. Pre-Treat",
-				image: "",
+				image: require("../../assets/articles/4/step1.png"),
 				content: "Run cold water over the stain. Pour Tide Ultra Stain Release Liquid detergent onto the stain and rub the fabric together gently or use a soft bristled toothbrush to help work the detergent into the fibers of the garment. Then let it stand for a few minutes."
 			},
 			{
 				title: "2. Dose",
-				image: "",
+				image: require("../../assets/articles/4/step2.png"),
 				content: "Use the cap to ensure you use the right amount of detergent. Just fill it with the correct dose of detergent, and pour it into the detergent dispenser if you have an HE machine, or directly into the drum before loading the clothes if you have a non-HE machine."
 			},
 			{
 				title: "3. Wash",
-				image: "",
+				image: require("../../assets/articles/4/step3.png"),
 				content: "Wash as usual with Tide, making sure you dose correctly. Always make sure to follow the instructions on your garment’s care label."
 			},
 			{
 				title: "4. Unload",
-				image: "",
+				image: require("../../assets/articles/4/step4.png"),
 				content: "When the wash cycle is over, remove the items and you’re ready to go."
 			},
 			{

@@ -3,6 +3,7 @@ import OrderScreen from './Orders';
 import AccountScreen from './Account';
 import SplashScreen from './Splash';
 import TipsScreen from './Tips';
-import RewardsScreen from './Rewards';
+import SingleBlogScreen from './SingleTips';
+import PromoScreen from './Promo';
 
-export { HomeScreen, OrderScreen, AccountScreen, SplashScreen, TipsScreen, RewardsScreen };
+export { HomeScreen, OrderScreen, AccountScreen, SplashScreen, TipsScreen, PromoScreen, SingleBlogScreen };

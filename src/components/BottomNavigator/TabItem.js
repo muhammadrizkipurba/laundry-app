@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native';
-import { Color, HomeIcon, OrderIcon, AccountIcon, TipsIcon, RewardsIcon  } from '../../assets';
+import { Color, HomeIcon, OrderIcon, AccountIcon, TipsIcon, PromoIcon  } from '../../assets';
 
 const TabItem = ({ isFocused, onPress, onLongPress, label }) => {
 
@@ -9,7 +9,7 @@ const TabItem = ({ isFocused, onPress, onLongPress, label }) => {
 		if(label === 'Orders') return <OrderIcon height={20} width={20} fill={isFocused ? Color.mainBlue : Color.textInactive} />;
 		if(label === 'Account') return <AccountIcon height={20} width={20} fill={isFocused ? Color.mainBlue : Color.textInactive} />;
 		if(label === 'Tips') return <TipsIcon height={20} width={20} fill={isFocused ? Color.mainBlue : Color.textInactive} />;
-		if(label === 'Rewards') return <RewardsIcon height={20} width={20} fill={isFocused ? Color.mainBlue : Color.textInactive} />;
+		if(label === 'Promo') return <PromoIcon height={20} width={20} fill={isFocused ? Color.mainBlue : Color.textInactive} />;
 		return <HomeIcon />;
 	};
 

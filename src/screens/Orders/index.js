@@ -1,14 +1,73 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+
+import { Color } from '../../assets'
+
+import { createStackNavigator } from '@react-navigation/stack';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+
+import RecentActivity from './views/RecentActivity';
+import HistoryActivity from './views/HistoryActivity';
+
+
+const Stack = createStackNavigator();
+const Tab = createMaterialTopTabNavigator();
+
+const OrdersComponent = ({}) => {
+  return (
+    <Tab.Navigator
+      tabBarOptions={{
+        indicatorStyle: {
+          backgroundColor: Color.mainBlue,
+          height: 3,
+          borderRadius: 20,
+        },
+        labelStyle: {
+          fontSize: 16,
+          fontWeight: "500",
+          textTransform: 'capitalize'
+        },
+        activeTintColor: Color.mainBlue,
+        inactiveTintColor: "#9a9a9a"
+      }}
+    >
+      <Tab.Screen 
+        name="RecentActivity" 
+        component={RecentActivity} 
+        options={{
+          tabBarLabel: "Recent",
+        }}
+      />
+      <Tab.Screen 
+        name="HistoryActivity" 
+        component={HistoryActivity} 
+        options={{
+          tabBarLabel: "History",
+        }}
+      />
+    </Tab.Navigator>
+  );
+};
 
 const OrderScreen = () => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Order Screen</Text>
-    </View>
+    <Stack.Navigator>
+			<Stack.Screen 
+				name="Activity" 
+				component={OrdersComponent} 
+        options={{
+          cardShadowEnabled: false,
+          headerStyle: {
+            shadowColor: 'transparent',
+            elevation: 0,
+          },
+          headerTitleStyle: {
+            fontSize: 20,
+            textTransform: 'uppercase'
+          }
+        }}
+			/>
+		</Stack.Navigator>
   );
 };
 
 export default OrderScreen;
-
-const styles = StyleSheet.create({});

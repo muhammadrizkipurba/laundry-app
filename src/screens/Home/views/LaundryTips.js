@@ -5,16 +5,20 @@ import { Color } from '../../../assets';
 import { Tips } from '../../../components/StaticContens';
 import TipsCard from './TipsCard';
 
-const LaundryTips = () => {
+const LaundryTips = ({ navigation }) => {
 	
-	const navigateTo = (id) => {
-		console.log(`Tips with id : ${id} just clicked!`)
+	const navigateTo = (data) => {
+		navigation.navigate('SingleBlogScreen', {data})
+	};
+
+	const seeMoreButtonHandler = () => {
+		navigation.navigate('Tips')
 	};
 
 	const TipsCardRender = Tips.map((data, idx) => {
 		if(idx < 4) {
 			return (
-				<TipsCard key={`tips-${idx+1}`} data={data} idx={idx} onPress={() => navigateTo(data.id)} />
+				<TipsCard key={`tips-${idx+1}`} data={data} idx={idx} onPress={() => navigateTo(data)} />
 			)
 		};
 		return null;
@@ -26,7 +30,7 @@ const LaundryTips = () => {
         <Text style={styles.title}>
           Laundry Tips
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => seeMoreButtonHandler()}>
           <Text style={styles.seeMoreButton}>
             See more tips
           </Text>

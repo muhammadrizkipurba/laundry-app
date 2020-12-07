@@ -1,15 +1,15 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
-const RewardsScreen = () => {
+const PromoScreen = () => {
   return (
     <View style={styles.container}>
-      <Text>Rewards Screen</Text>
+      <Text>Promo Screen</Text>
     </View>
   );
 };
 
-export default RewardsScreen;
+export default PromoScreen;
 
 const styles = StyleSheet.create({
 	container: {

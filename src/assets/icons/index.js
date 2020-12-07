@@ -2,7 +2,8 @@ import HomeIcon from './HomeIcon.svg';
 import OrderIcon from './OrderIcon.svg';
 import AccountIcon from './AccountIcon.svg';
 import TipsIcon from './TipsIcon.svg';
-import RewardsIcon from './RewardsIcon.svg';
+import PromoIcon from './PromoIcon.svg';
+import CalendarIcon from './calendar.svg';
 // Home screen box info
 import Coin from './coin.svg';
 import GetCoinIcon from './point.svg';
@@ -20,7 +21,8 @@ export {
     OrderIcon,
     AccountIcon,
     TipsIcon,
-    RewardsIcon,
+    PromoIcon,
+    CalendarIcon,
     Coin,
     CouponIcon,
     GetCoinIcon,

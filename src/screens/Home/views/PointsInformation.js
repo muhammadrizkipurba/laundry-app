@@ -5,7 +5,7 @@ import { Coin, CouponIcon, Color } from '../../../assets';
 
 const PointsInformation = () => {
   
-  const onPressRewards = () => {
+  const onPressPromo = () => {
     console.log('reward button press')
   };
 
@@ -16,7 +16,7 @@ const PointsInformation = () => {
           <Coin height={22} width={22} />
           <Text style={{marginLeft: 10, fontSize: 18, fontWeight: "800"}}>100 points</Text>
         </View>
-        <TouchableOpacity onPress={onPressRewards}>
+        <TouchableOpacity onPress={onPressPromo}>
           <View style={styles.redeemBackground}>
             <CouponIcon height={30} width={30} resizeMode="contain" />
           </View>
