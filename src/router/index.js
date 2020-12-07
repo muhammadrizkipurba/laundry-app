@@ -15,7 +15,7 @@ const MainApp  = () => {
       tabBar={ props => <BottomNavigator {...props} /> }
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Orders" component={OrderScreen} />
+      <Tab.Screen name="Activity" component={OrderScreen} />
       <Tab.Screen name="Tips" component={TipsScreen} />
       <Tab.Screen name="Promo" component={PromoScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />
