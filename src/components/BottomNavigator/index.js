@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import { Color } from '../../assets';
 
 import TabItem from './TabItem';
 
@@ -76,6 +75,6 @@ const styles = StyleSheet.create({
       height: 0,
       width: 0
     },
-    elevation: 3,
+    elevation: 1,
 	}
 });

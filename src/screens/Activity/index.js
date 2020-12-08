@@ -12,7 +12,7 @@ import HistoryActivity from './views/HistoryActivity';
 const Stack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
-const OrdersComponent = ({}) => {
+const ActivitiesComponent = ({}) => {
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -48,12 +48,12 @@ const OrdersComponent = ({}) => {
   );
 };
 
-const OrderScreen = () => {
+const ActivityScreen = () => {
   return (
     <Stack.Navigator>
 			<Stack.Screen 
 				name="Activity" 
-				component={OrdersComponent} 
+				component={ActivitiesComponent} 
         options={{
           cardShadowEnabled: false,
           headerStyle: {
@@ -70,4 +70,4 @@ const OrderScreen = () => {
   );
 };
 
-export default OrderScreen;
+export default ActivityScreen;

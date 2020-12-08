@@ -4,6 +4,17 @@ import AccountIcon from './AccountIcon.svg';
 import TipsIcon from './TipsIcon.svg';
 import PromoIcon from './PromoIcon.svg';
 import CalendarIcon from './calendar.svg';
+// My Account screen
+import NotificationIcon from './notification.svg';
+import SettingsIcon from './SettingsIcon.svg';
+import BadgeIcon from './Crown.svg';
+import IonRightIcon from './ion-right.svg'
+import MyPointsIcon from './MyPoints.svg';
+import MyRewardsIcon from './MyRewards.svg';
+import MyVouchersIcon from './MyVouchers.svg';
+import FaqIcon from './Faq.svg';
+import TermsAndConditionsIcon from './TermsIcon.svg'
+import PrivacyPolicyIcon from './PrivacyIcon.svg'
 // Home screen box info
 import Coin from './coin.svg';
 import GetCoinIcon from './point.svg';
@@ -23,6 +34,16 @@ export {
     TipsIcon,
     PromoIcon,
     CalendarIcon,
+    SettingsIcon,
+    NotificationIcon,
+    BadgeIcon,
+    IonRightIcon,
+    MyPointsIcon,
+    MyRewardsIcon,
+    MyVouchersIcon,
+    FaqIcon,
+    TermsAndConditionsIcon,
+    PrivacyPolicyIcon,
     Coin,
     CouponIcon,
     GetCoinIcon,
