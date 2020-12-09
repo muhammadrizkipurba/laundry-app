@@ -5,6 +5,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import { HomeScreen, ActivityScreen, AccountScreen, SplashScreen, TipsScreen, PromoScreen, SingleBlogScreen } from '../screens';
 import { BottomNavigator } from '../components';
+import SignupScreen from '../screens/Signup';
+import SigninScreen from '../screens/Signin';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -28,6 +30,14 @@ const Router = () => {
     <Stack.Navigator initialRouteName="Splash">        
       <Stack.Screen name="Splash" component={SplashScreen} options={{headerShown: false}} />
       <Stack.Screen name="MainApp" component={MainApp} options={{headerShown: false}} />
+      <Stack.Screen 
+        name="LoginScreen" 
+        component={SigninScreen} 
+        options={{ 
+          headerShown: false 
+        }} 
+      />
+      <Stack.Screen name="SignupScreen" component={SignupScreen} options={{ headerShown: false }} />
       <Stack.Screen 
         name="SingleBlogScreen" 
         component={SingleBlogScreen} 
