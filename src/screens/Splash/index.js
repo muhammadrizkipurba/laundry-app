@@ -6,8 +6,8 @@ const SplashScreen = ({ navigation }) => {
 
   useEffect(() => {
     setTimeout(() => {
-      // navigation.replace('MainApp') // redirect to MainApp Display
-      navigation.replace('LoginScreen') // redirect to Signin Display
+      navigation.replace('MainApp') // redirect to MainApp Display
+      // navigation.replace('LoginScreen') // redirect to Signin Display
     }, 3000);
   }, [navigation]);
 

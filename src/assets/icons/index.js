@@ -21,6 +21,7 @@ import AppleIcon from './AppleIcon.svg';
 import GoogleIcon from './GoogleIcon.svg';
 import EmailIcon from './EmailIcon.svg';
 import PasswordIcon from './PasswordIcon.svg';
+import PhoneIcon from './PhoneIcon.svg';
 import ViewIcon from './ViewIcon.svg';
 import BlindIcon from './BlindIcon.svg';
 // Home screen box info
@@ -57,6 +58,7 @@ export {
     GoogleIcon,
     EmailIcon,
     PasswordIcon,
+    PhoneIcon,
     ViewIcon,
     BlindIcon,
     Coin,

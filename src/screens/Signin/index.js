@@ -1,7 +1,21 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { Fragment } from 'react';
-import {Image, Keyboard, SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View} from 'react-native';
-import { AppleIcon, Color, FacebookIcon, GoogleIcon, Logo } from '../../assets';
+import { 
+  Image,
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View
+} from 'react-native';
+import validator from 'validator';
+
+import { AppleIcon, Color, FacebookIcon, GoogleIcon, LoadingCircleGif, Logo } from '../../assets';
 import TextInputField from '../../components/TextInputField';
 
 const DismissKeyboard = ({ children }) => {
@@ -15,24 +29,53 @@ const DismissKeyboard = ({ children }) => {
 const SigninScreen = ({ navigation }) => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
+	const [canSubmit, setCanSubmit] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 
-	const onChangeEmail = (e) => {
-		setEmail(e.target.value)
+  let _scrollview = useRef(null);
+
+	const onChangeEmail = (value) => {
+		setEmail(value.trim())
 	};
 
-	const onChangePassword = (e) => {
-		setPassword(e.target.value)
+	const onChangePassword = (value) => {
+		setPassword(value.trim())
 	};
 
 	const navigateTo = (screen) => {
 		navigation.navigate(screen);
-	};
+  };
+
+  const onSignIn = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      navigation.replace('MainApp');
+    }, 3000);
+  };
+
+  const validateEmail = (email) => {
+    return validator.isEmail(email);
+  };
+  
+  useLayoutEffect(() => {
+    if ((validateEmail(email) && password.length >= 8) || email.length > 8 && password.length >= 8){
+      setCanSubmit(true)
+    } else {
+      setCanSubmit(false)
+    }
+  }, [email, password])
 
   return (
 		<Fragment>
 			<SafeAreaView style={styles.topSafeArea}/>
 			<SafeAreaView style={styles.bottomSafeArea}>
-				<ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false} bounces={false}>
+				<ScrollView 
+          ref={_scrollview}
+          style={{ flex: 1 }} 
+          showsVerticalScrollIndicator={false} 
+          bounces={false}
+        >
 					<View style={styles.topBox}>
 						<Image source={Logo} style={styles.loginImage}/>
 						<Text style={styles.sloganText}>Fresh Clothes, Fresh Life</Text>
@@ -52,9 +95,11 @@ const SigninScreen = ({ navigation }) => {
 												label='Email or username'
 												name="email"
 												value={email}
-												onChange={(e) => onChangeEmail(e)}
+                        onFocus={() => setTimeout(() => {_scrollview.current.scrollToEnd()}, 600)}
+												onChange={(value) => onChangeEmail(value)}
 												placeholder="Your email or username"
 												autoCapitalize="none"
+                        isEditable={!isLoading}
 											/>
 										</DismissKeyboard>
 										<DismissKeyboard>
@@ -62,9 +107,11 @@ const SigninScreen = ({ navigation }) => {
 												label='Password'
 												name='password'
 												value={password}
-												onChange={(e) => onChangePassword(e)}
+                        onFocus={() => setTimeout(() => {_scrollview.current.scrollToEnd()}, 600)}
+												onChange={(value) => onChangePassword(value)}
 												placeholder="Your password"
 												autoCapitalize="none"
+                        isEditable={!isLoading}
 												secureTextEntry={true}
 											/>
 										</DismissKeyboard>
@@ -74,18 +121,27 @@ const SigninScreen = ({ navigation }) => {
 												<Text style={styles.signupLink}>here</Text>
 											</TouchableOpacity>
 										</View>
-										<TouchableOpacity onPress={() => onSignIn} style={styles.button}>
-											<Text style={styles.buttonText}>Sign in</Text>
-										</TouchableOpacity>
+                    { isLoading ? 
+                      <View style={{ alignItems: 'center', marginVertical: 11}}>
+                        <Image source={LoadingCircleGif} style={styles.loadingGif} />
+                      </View>
+                      : <TouchableOpacity 
+                        style={styles.button(canSubmit)}
+                        onPress={() => onSignIn()} 
+                        disabled={isLoading || !canSubmit} 
+                      >
+                        <Text style={styles.buttonText}>Sign in</Text>
+                      </TouchableOpacity>
+                    }
 										<Text style={{textAlign: "center", marginVertical: 20}}>Or Sign in with : </Text>
 										<View style={styles.socialWrapper}>
-											<TouchableOpacity style={styles.socialButton}>
+											<TouchableOpacity disabled={isLoading} style={styles.socialButton(isLoading)}>
 												<FacebookIcon height={30} width={30} />
 											</TouchableOpacity>
-											<TouchableOpacity style={styles.socialButton}>
+											<TouchableOpacity disabled={isLoading} style={styles.socialButton(isLoading)}>
 												<GoogleIcon height={30} width={30} />
 											</TouchableOpacity>
-											<TouchableOpacity style={styles.socialButton}>
+											<TouchableOpacity disabled={isLoading} style={styles.socialButton(isLoading)}>
 												<AppleIcon height={30} width={30} fill="#7d7d7d" />
 											</TouchableOpacity>
 										</View>
@@ -94,10 +150,9 @@ const SigninScreen = ({ navigation }) => {
 						</View>
 					</View>
 				</ScrollView>
+        <KeyboardAvoidingView behavior="padding" enabled={Platform.OS === 'ios'} />
 			</SafeAreaView>
 		</Fragment>
-	// <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
-	// </ScrollView>
   );
 };
 
@@ -158,12 +213,13 @@ const styles = StyleSheet.create({
 	formWrapper: {
 		marginTop: 10
 	},
-	button: {
+	button: (canSubmit) => ({
 		backgroundColor: Color.mainBlue,
-		paddingVertical: 16,
+    paddingVertical: 16,
+    opacity: canSubmit ? 1 : .7,
 		alignItems: 'center',
 		borderRadius: 30
-	},
+	}),
 	buttonText: {
 		color: "#ffffff",
 		textTransform: "uppercase",
@@ -179,8 +235,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'space-between'
 	},
-	socialButton: {
-		backgroundColor: "#ffffff",
+	socialButton: (isLoading) => ({
+		backgroundColor: isLoading ? "#f8f8f8" : "#ffffff",
 		paddingVertical: 20,
 		paddingHorizontal: 32,
 		borderRadius: 10,
@@ -192,11 +248,16 @@ const styles = StyleSheet.create({
 			width: 0
 		},
 		elevation: 1,
-	},
+	}),
 	version	: {
 		textAlign: "center",
 		marginBottom: 5,
 		fontSize: 12,
 		color: '#ABABAB'
-	}
+  },
+  loadingGif: {
+    height: 27,
+    width: 27,
+    resizeMode: 'contain'
+  }
 });

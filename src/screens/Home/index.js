@@ -28,7 +28,7 @@ const HomeScreen = ({ navigation }) => {
           <HeaderLogo />
           <View style={styles.backgroundBottomOuter}>
             <View style={styles.backgroundBottomInner}>
-              <LaundryPromo />
+              <LaundryPromo navigation={navigation} />
               <OurServices />
               <LaundryTips navigation={navigation} />
             </View>

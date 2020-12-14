@@ -2,42 +2,29 @@ import React from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { FlatListSlider } from 'react-native-flatlist-slider';
 import { Color } from '../../../assets';
+import { Promo } from '../../../components/StaticContens'
 import CustomSliderPreview from './CustomSliderPreview';
 
-const images = [
-  {
-    banner: require('../../../assets/images/promo-new.jpg'),
-    desc: 'Get 50% discount for new customer',
-  },
-  {
-    banner: require('../../../assets/images/promo-bag-shoes.jpg'),
-    desc: '10% off to clean your bag and shoes',
-  },
-  {
-    banner: require('../../../assets/images/promo.jpg'),
-    desc: 'Special December promo',
-  },
-  {
-    banner: require('../../../assets/images/promo-20.jpg'),
-    desc: 'Get 20% off for 50 KG clothes',
-  }
-];
+const LaundryPromo = ({ navigation }) => {
 
-const LaundryPromo = () => {
+  const navigateTo = (screen) => {
+    navigation.navigate(screen)
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.titleWrapper}>
         <Text style={styles.title}>
           Special Offers
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigateTo('Promo')}>
           <Text style={styles.seeMoreButton}>
             See all promos
           </Text>
         </TouchableOpacity>
       </View>
       <FlatListSlider
-        data={images}
+        data={Promo}
         width={275}
         loop={false}
         timer={10000}

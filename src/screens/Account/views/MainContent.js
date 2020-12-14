@@ -4,7 +4,11 @@ import {  } from 'react-native-gesture-handler';
 import { Coin, Color, FaqIcon, IonRightIcon, MyPointsIcon, MyRewardsIcon, MyVouchersIcon, PrivacyPolicyIcon, TermsAndConditionsIcon } from '../../../assets';
 import ProfilePicture from './ProfilePicture';
 
-const MainContent = () => {
+const MainContent = ({ navigation }) => {
+
+  const onSignOut = () => {
+    navigation.replace('LoginScreen');
+  };
   
   const navigateTo = (value) => {
     console.log(value)
@@ -81,7 +85,7 @@ const MainContent = () => {
                 <Text style={styles.appVersionLabel}>Version 1.0.0</Text>
                 <Text style={styles.appVersionLabel}>#FreshClothesFreshLife</Text>
               </View>
-              <TouchableOpacity style={styles.signoutButton}>
+              <TouchableOpacity onPress={() => onSignOut()} style={styles.signoutButton}>
                 <Text style={styles.signoutLabel}>Sign out</Text>
               </TouchableOpacity>
             </View>

@@ -20,7 +20,7 @@ const CustomSliderPreview = ({style, item, imageKey, onPress, index, active, loc
           source={item.banner}
         />
       </View>
-      <Text style={styles.desc}>{item.desc}</Text>
+      <Text style={styles.title}>{item.title}</Text>
     </TouchableOpacity>
   );
 };
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     borderRadius: 25,
 		resizeMode: 'cover',
   },
-  desc: {
+  title: {
 		fontSize: 15,
 		fontWeight: "500",
     letterSpacing: 0,
