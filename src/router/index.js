@@ -3,7 +3,16 @@ import { StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { HomeScreen, ActivityScreen, AccountScreen, SplashScreen, TipsScreen, PromoScreen, SingleBlogScreen } from '../screens';
+import {
+  HomeScreen,
+  ActivityScreen,
+  AccountScreen,
+  SplashScreen,
+  TipsScreen,
+  PromoScreen,
+  SingleBlogScreen,
+  PromoDetailsScreen
+} from '../screens';
 import { BottomNavigator } from '../components';
 import SignupScreen from '../screens/Signup';
 import SigninScreen from '../screens/Signin';
@@ -44,6 +53,19 @@ const Router = () => {
         options={{
           headerShown: true, 
           headerTitle: 'Laundry Tips',
+          headerBackTitleVisible: false,
+          gestureEnabled: true,
+          cardStyle: {
+            backgroundColor: "#f9f9f9"
+          }
+        }} 
+      />
+      <Stack.Screen 
+        name="PromoDetailsScreen" 
+        component={PromoDetailsScreen} 
+        options={{
+          headerShown: true, 
+          headerTitle: 'Voucher Details',
           headerBackTitleVisible: false,
           gestureEnabled: true,
           cardStyle: {

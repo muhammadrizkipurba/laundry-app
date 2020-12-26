@@ -1,10 +1,14 @@
 import React, { Fragment } from 'react';
-import {FlatList, SafeAreaView, StyleSheet, Text, View} from 'react-native';
-import { Color } from '../../assets';
-import CouponCard from './views/CouponCard';
+import {FlatList, SafeAreaView, StyleSheet, View} from 'react-native';
+import CouponHighlight from './views/CouponHighlight';
 import { Promo } from '../../components/StaticContens';
 
-const PromoScreen = () => {
+const PromoScreen = ({ navigation }) => {
+
+  const navigateTo = (screen) => {
+    navigation.navigate(screen);
+  };
+
   return (
     <Fragment>
       <SafeAreaView style={styles.topSafeArea}/>
@@ -15,7 +19,7 @@ const PromoScreen = () => {
           style={{paddingVertical: 12}}
           showsVerticalScrollIndicator={false}
           renderItem={({item}) => (
-            <CouponCard data={item} onPress={() => console.log(`promo-id-${item.id}`)}/>
+            <CouponHighlight data={item} onPress={() => navigateTo('PromoDetailsScreen')}/>
           )}
         />
       </View>

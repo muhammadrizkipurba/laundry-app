@@ -353,28 +353,36 @@ const Promo = [
     banner: require('../../assets/images/promo-new.jpg'),
     title: 'Get 50% discount for new customer',
     desc: '50% discount for your first checkout in Laundry App.',
-    code: 'NEWCUSTOMER50'
+	code: 'NEWCUSTOMER50',
+	expired: null,
+	pieces: 1
   },
   {
     id: 2,
     banner: require('../../assets/images/promo-bag-shoes.jpg'),
     title: '10% off to clean your bag and shoes',
     desc: 'Need to clean your bag and shoes ? Clean with us and enjoy this 10% discount',
-    code: 'BAGSHOES10'
+	code: 'BAGSHOES10',
+	expired: "31/01/2021",
+	pieces: 2
   },
   {
     id: 3,
     banner: require('../../assets/images/promo.jpg'),
     title: 'Special December promo',
     desc: 'Enjoy this special free delivery fee in December only.',
-    code: 'FLASHDECEMBER'
+	code: 'FLASHDECEMBER',
+	expired: "31/12/2020",
+	pieces: 1
   },
   {
     id: 4,
     banner: require('../../assets/images/promo-20.jpg'),
     title: 'Get 20% off for 50 KG clothes',
     desc: 'Discount 20% for minimum 50 KG clothes ( does not apply to express laundry services ) ',
-    code: 'LAUNDRY20'
+	code: 'LAUNDRY20',
+	expired: null,
+	pieces: 2
   }
 ];
 

@@ -10,7 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import { CalendarIcon } from '../../assets';
+import { CalendarIcon } from '../../../assets';
 
 const SingleBlogScreen = ({route, navigation}) => {
 
