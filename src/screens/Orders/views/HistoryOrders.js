@@ -1,17 +1,17 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
-const HistoryActivity = () => {
+const HistoryOrders = () => {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
-				<Text>History Activity</Text>
+				<Text>No orders yet</Text>
       </SafeAreaView>
     </View>
   );
 };
 
-export default HistoryActivity;
+export default HistoryOrders;
 
 const styles = StyleSheet.create({
   container: {

@@ -19,7 +19,7 @@ const TabItem = ({isFocused, onPress, onLongPress, label}) => {
           fill={isFocused ? Color.mainBlue : Color.textInactive}
         />
       );
-    if (label === 'Activity')
+    if (label === 'Orders')
       return (
         <OrderIcon
           height={20}

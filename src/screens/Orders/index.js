@@ -5,14 +5,14 @@ import { Color } from '../../assets'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
-import RecentActivity from './views/RecentActivity';
-import HistoryActivity from './views/HistoryActivity';
+import RecentOrders from './views/RecentOrders';
+import HistoryOrders from './views/HistoryOrders';
 
 
 const Stack = createStackNavigator();
 const Tab = createMaterialTopTabNavigator();
 
-const ActivitiesComponent = ({}) => {
+const OrdersComponent = ({}) => {
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -31,15 +31,15 @@ const ActivitiesComponent = ({}) => {
       }}
     >
       <Tab.Screen 
-        name="RecentActivity" 
-        component={RecentActivity} 
+        name="RecentOrders" 
+        component={RecentOrders} 
         options={{
           tabBarLabel: "Recent",
         }}
       />
       <Tab.Screen 
-        name="HistoryActivity" 
-        component={HistoryActivity} 
+        name="HistoryOrders" 
+        component={HistoryOrders} 
         options={{
           tabBarLabel: "History",
         }}
@@ -48,12 +48,12 @@ const ActivitiesComponent = ({}) => {
   );
 };
 
-const ActivityScreen = () => {
+const OrdersScreen = () => {
   return (
     <Stack.Navigator>
 			<Stack.Screen 
-				name="Activity" 
-				component={ActivitiesComponent} 
+				name="Orders" 
+				component={OrdersComponent} 
         options={{
           cardShadowEnabled: false,
           headerStyle: {
@@ -70,4 +70,4 @@ const ActivityScreen = () => {
   );
 };
 
-export default ActivityScreen;
+export default OrdersScreen;

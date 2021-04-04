@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import {
   HomeScreen,
-  ActivityScreen,
+  OrdersScreen,
   AccountScreen,
   SplashScreen,
   TipsScreen,
@@ -26,7 +26,7 @@ const MainApp  = () => {
       tabBar={ props => <BottomNavigator {...props} /> }
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Activity" component={ActivityScreen} />
+      <Tab.Screen name="Orders" component={OrdersScreen} />
       <Tab.Screen name="Tips" component={TipsScreen} />
       <Tab.Screen name="Promo" component={PromoScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />

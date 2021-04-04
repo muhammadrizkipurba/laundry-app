@@ -1,23 +1,23 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
-const RecentActivity = () => {
+const RecentOrders = () => {
   return (
     <View style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
-				<Text>Recent Activity</Text>
+        <Text>No orders</Text>
       </SafeAreaView>
     </View>
   );
 };
 
-export default RecentActivity;
+export default RecentOrders;
 
 const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		backgroundColor: "white",
-		alignItems: 'center',
-		justifyContent: 'center',
-	}
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

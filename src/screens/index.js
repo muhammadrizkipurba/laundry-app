@@ -1,5 +1,5 @@
 import HomeScreen from './Home';
-import ActivityScreen from './Activity';
+import OrdersScreen from './Orders';
 import AccountScreen from './Account';
 import SplashScreen from './Splash';
 import TipsScreen from './Tips';
@@ -9,7 +9,7 @@ import PromoDetailsScreen from './Promo/views/PromoDetails';
 
 export {
     HomeScreen,
-    ActivityScreen,
+    OrdersScreen,
     AccountScreen,
     SplashScreen,
     TipsScreen,
